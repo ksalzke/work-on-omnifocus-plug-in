@@ -5,7 +5,8 @@
   "description": "An OmniFocus plug-in to manage 'work on' tasks.",
   "version": "1.0.0",
   "actions": [
-    { "identifier": "addWorkOnTask", "image": "goforward.plus" }
+    { "identifier": "addWorkOnTask", "image": "goforward.plus" },
+    { "identifier": "completeWorkOnTask", "image": "goforward" }
   ],
   "libraries": [
     { "identifier": "workOnLib"}
