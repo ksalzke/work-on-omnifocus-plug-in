@@ -18,7 +18,7 @@
 
     // if scheduling plug-in is also installed, add option to schedule for tomorrow or a future date
     const schedulingPlugin = PlugIn.find('com.KaitlinSalzke.Scheduling')
-    if (schedulingPlugin !== null) options.splice(1, 0, 'Schedule work tomorrow',)
+    if (schedulingPlugin !== null) options.splice(1, 0, 'Schedule work tomorrow', 'Schedule work for a future date')
 
     form.addField(new Form.Field.MultipleOptions('nextActions', 'Next actions', options, null, [options[0]]))
 
@@ -34,6 +34,9 @@
           break
         case 'Schedule work tomorrow':
           await schedulingPlugin.library('schedulingLib').rescheduleTask(task, tomorrow)
+          break
+        case 'Schedule work for a future date':
+          await schedulingPlugin.library('schedulingLib').promptAndReschedule([task])
           break
         case 'Mark as complete':
           task.parent.markComplete()
