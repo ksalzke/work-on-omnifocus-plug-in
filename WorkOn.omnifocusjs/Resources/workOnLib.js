@@ -20,7 +20,7 @@
     const schedulingPlugin = PlugIn.find('com.KaitlinSalzke.Scheduling')
     if (schedulingPlugin !== null) options.splice(1, 0, 'Schedule work tomorrow', 'Schedule work for a future date')
 
-    form.addField(new Form.Field.MultipleOptions('nextActions', 'Next actions', options, null, [options[0]]))
+    form.addField(new Form.Field.MultipleOptions('nextActions', 'Next actions', options, null, []))
 
     await form.show(`You worked on '${trimmedName}'.\nWhat do you want to do next?`, 'OK')
 
