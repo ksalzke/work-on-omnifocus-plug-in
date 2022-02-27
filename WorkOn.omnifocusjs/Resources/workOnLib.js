@@ -6,7 +6,7 @@
     const trimmedName = task.name.match(/\w.*\w/g)[0]
 
     const newTask = new Task(`Work on: ${trimmedName}`, task.beginning)
-    newTask.repetitionRule = new Task.RepetitionRule('FREQ=DAILY', Task.RepetitionMethod.DeferUntilDate)
+    newTask.repetitionRule = new Task.RepetitionRule('FREQ=HOURLY', Task.RepetitionMethod.DeferUntilDate)
   }
   
   workOnLib.onComplete = async (task) => {
@@ -18,25 +18,27 @@
 
     // if scheduling plug-in is also installed, add option to schedule for tomorrow or a future date
     const schedulingPlugin = PlugIn.find('com.KaitlinSalzke.Scheduling')
-    if (schedulingPlugin !== null) options.splice(1, 0, 'Continue work tomorrow')
+    if (schedulingPlugin !== null) options.splice(1, 0, 'Schedule work tomorrow',)
 
-    form.addField(new Form.Field.Option('nextAction', 'Next action', options, null, options[0]))
+    form.addField(new Form.Field.MultipleOptions('nextActions', 'Next actions', options, null, [options[0]]))
 
     await form.show(`You worked on '${trimmedName}'.\nWhat do you want to do next?`, 'OK')
 
-    switch (form.values.nextAction) {
-      case 'Continue work later':
-        break
-      case 'Continue work tomorrow':
-        const tomorrow = new Date()
-        tomorrow.setDate(tomorrow.getDate() + 1)
-        await schedulingPlugin.library('schedulingLib').rescheduleTask(task, tomorrow)
-        break
-      case 'Mark as complete':
-        task.parent.markComplete()
-        break
-    }
+    const tomorrow = new Date()
+    tomorrow.setDate(tomorrow.getDate() + 1)
 
+    for (const nextAction of form.values.nextActions) {
+      switch (nextAction) {
+        case 'Continue work later':
+          break
+        case 'Schedule work tomorrow':
+          await schedulingPlugin.library('schedulingLib').rescheduleTask(task, tomorrow)
+          break
+        case 'Mark as complete':
+          task.parent.markComplete()
+          break
+      }
+    }
   }
 
   return workOnLib
