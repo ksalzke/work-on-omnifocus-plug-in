@@ -14,7 +14,7 @@
 
     // NB using form as alert not being processed correctly
     const form = new Form()
-    const options = ['Continue work later', 'Defer until tomorrow', 'Mark as complete']
+    const options = ['Defer until tomorrow', 'Mark as complete']
 
     // if scheduling plug-in is also installed, add option to schedule for tomorrow or a future date
     const schedulingPlugin = PlugIn.find('com.KaitlinSalzke.Scheduling')
@@ -29,8 +29,6 @@
 
     for (const nextAction of form.values.nextActions) {
       switch (nextAction) {
-        case 'Continue work later':
-          break
         case 'Defer until tomorrow':
           task.deferDate = Calendar.current.startOfDay(tomorrow)
           break
