@@ -24,13 +24,13 @@ This plug-in contains the following actions:
 
 This action runs `addWorkOnTask` below, creating a task similar to the following:
 
-// TODO: Insert screenshot
+!['Work on' task](https://user-images.githubusercontent.com/16893787/156442335-c3419809-8c61-4ef1-8928-b51f66177de0.png)
 
 ## Complete 'Work On...' Task
 
 This action runs the 'work on...' task as completed and runs `onComplete` below.
 
-// TODO: Insert screenshot
+![Completed task prompt](https://user-images.githubusercontent.com/16893787/156442639-5ae41b7a-47e3-43e4-96c1-b45a2f851387.png)
 
 # Functions
 
