@@ -3,12 +3,20 @@
   "identifier": "com.KaitlinSalzke.WorkOn",
   "author": "Kaitlin Salzke",
   "description": "An OmniFocus plug-in to manage 'work on' tasks.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "actions": [
-    { "identifier": "addWorkOnTask", "image": "goforward.plus" },
-    { "identifier": "completeWorkOnTask", "image": "goforward" }
+    {
+      "identifier": "addWorkOnTask",
+      "image": "goforward.plus"
+    },
+    {
+      "identifier": "completeWorkOnTask",
+      "image": "goforward"
+    }
   ],
   "libraries": [
-    { "identifier": "workOnLib"}
+    {
+      "identifier": "workOnLib"
+    }
   ]
 }
