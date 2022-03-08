@@ -44,7 +44,7 @@ The 'work on' task is set to repeat hourly.
 
 ## `onComplete (task: Task)`
 
-_Asynchronous._ This function is designed to be run on a previously-created 'work on' task.
+_Asynchronous._ This function is designed to be run on a previously-created 'work on' task. If a task that does not match the set format is passed as input, this function will exit without processing the task further.
 
 It presents the user with the following options, of which more than one may be selected:
 
