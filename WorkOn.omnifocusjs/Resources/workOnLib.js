@@ -1,4 +1,4 @@
-/* global PlugIn Version Formatter Tag Calendar moveTags deleteObject Alert DateComponents */
+/* global PlugIn Version Calendar Task Form */
 (() => {
   const workOnLib = new PlugIn.Library(new Version('1.0'))
 
@@ -8,7 +8,7 @@
     const newTask = new Task(`Work on: ${trimmedName}`, task.beginning)
     newTask.repetitionRule = new Task.RepetitionRule('FREQ=HOURLY', Task.RepetitionMethod.DeferUntilDate)
   }
-  
+
   workOnLib.onComplete = async (task) => {
     const match = task.name.match(/Work on: (.*)/)
     if (match === null) return // do nothing if not a work on task
