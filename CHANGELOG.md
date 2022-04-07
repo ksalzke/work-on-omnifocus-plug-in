@@ -1,3 +1,13 @@
+## [1.0.2](https://github.com/ksalzke/work-on-omnifocus-plug-in/compare/v1.0.1...v1.0.2) (2022-04-07)
+
+
+### Bug Fixes
+
+* :bug: fix bug where name was shown as '1' in dialogue, closes [#2](https://github.com/ksalzke/work-on-omnifocus-plug-in/issues/2) ([eb504bd](https://github.com/ksalzke/work-on-omnifocus-plug-in/commit/eb504bd5777401d47b10ad6ca537e9eb0ca22d8c))
+* :bug: fix bug where non-word characters (e.g. parentheses) at end of name were dropped, closes [#3](https://github.com/ksalzke/work-on-omnifocus-plug-in/issues/3) ([572267b](https://github.com/ksalzke/work-on-omnifocus-plug-in/commit/572267b2c73771f6bc6bf7c9067d79fc517a5ef3))
+
+
+
 ## [1.0.1](https://github.com/ksalzke/work-on-omnifocus-plug-in/compare/v1.0.0...v1.0.1) (2022-03-08)
 
 
