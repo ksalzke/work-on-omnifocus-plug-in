@@ -12,7 +12,7 @@
   workOnLib.onComplete = async (task) => {
     const match = task.name.match(/Work on: (.*)/)
     if (match === null) return // do nothing if not a work on task
-    const trimmedName = [1]
+    const trimmedName = match[1]
 
     // NB using form as alert not being processed correctly
     const form = new Form()
