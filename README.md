@@ -28,7 +28,7 @@ This action runs `addWorkOnTask` below, creating a task similar to the following
 
 ## Complete 'Work On...' Task
 
-This action runs the 'work on...' task as completed and runs `onComplete` below.
+This action runs the 'work on...' task as completed and runs `onComplete` below. ('Stop working on' not pictured.)
 
 ![Completed task prompt](https://user-images.githubusercontent.com/16893787/156442639-5ae41b7a-47e3-43e4-96c1-b45a2f851387.png)
 
@@ -55,3 +55,5 @@ It presents the user with the following options, of which more than one may be s
 3. **Schedule work for a future date.** (Only shown if my [Scheduling plug-in](https://github.com/ksalzke/scheduling-omnifocus-plugin) is also installed) This prompts the user to select a date and 'schedules' the next repetition of the 'work on' task for that date.
 
 4. **Mark as complete.** This marks the parent task/project as complete.
+
+5. **Stop working on.** This marks the task complete then removes subsequent repetitions.

@@ -16,7 +16,7 @@
 
     // NB using form as alert not being processed correctly
     const form = new Form()
-    const options = ['Defer until tomorrow', 'Mark as complete']
+    const options = ['Defer until tomorrow', 'Mark as complete', 'Stop working on']
 
     // if scheduling plug-in is also installed, add option to schedule for tomorrow or a future date
     const schedulingPlugin = PlugIn.find('com.KaitlinSalzke.Scheduling')
@@ -43,6 +43,8 @@
         case 'Mark as complete':
           task.parent.markComplete()
           break
+        case 'Stop working on':
+          deleteObject(task)
       }
     }
   }
