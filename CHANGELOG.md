@@ -1,3 +1,12 @@
+# [1.1.0](https://github.com/ksalzke/work-on-omnifocus-plug-in/compare/v1.0.2...v1.1.0) (2023-01-31)
+
+
+### Features
+
+* :sparkles: Add 'stop working on' option ([eee8f07](https://github.com/ksalzke/work-on-omnifocus-plug-in/commit/eee8f076252a40da779011e631fe81f1392c1449))
+
+
+
 ## [1.0.2](https://github.com/ksalzke/work-on-omnifocus-plug-in/compare/v1.0.1...v1.0.2) (2022-04-07)
 
 
