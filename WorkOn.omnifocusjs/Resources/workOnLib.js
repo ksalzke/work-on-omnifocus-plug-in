@@ -47,7 +47,16 @@
           await schedulingPlugin.library('schedulingLib').promptAndReschedule([task])
           break
         case 'Mark as complete':
-          task.parent.markComplete()
+          const parentTask = task.parent
+          // delete task (because this is now a repetition) so that custom complete will work
+          deleteObject(task)
+
+          const customCompletePlugin = PlugIn.find('com.KaitlinSalzke.customComplete')
+          if (customCompletePlugin !== null) {
+            customCompletePlugin.library('customCompleteLib').onComplete(parentTask)
+          } else {
+            parentTask.markComplete()
+          }
           break
         case 'Stop working on':
           deleteObject(task)
