@@ -21,12 +21,22 @@
 
     // if scheduling plug-in is also installed, add option to schedule for tomorrow or a future date
     const schedulingPlugin = PlugIn.find('com.KaitlinSalzke.Scheduling')
-    if (schedulingPlugin !== null) options.splice(2, 0, 'Schedule work tomorrow', 'Schedule work for a future date')
+    const schedulingInfo = (schedulingPlugin !== null) ? await schedulingPlugin.library('schedulingLib').getScheduleInfo(task) : ''
+
+    if (schedulingPlugin !== null) {
+      options.splice(2, 0, 'Schedule work for a future date')
+
+      // check if task is already scheduled for tomorrow
+      const daysToAdd = new DateComponents()
+      daysToAdd.day = 1
+      const startOfTomorrow = Calendar.current.startOfDay(Calendar.current.dateByAddingDateComponents(new Date(), daysToAdd))
+      const scheduledForTomorrow = schedulingInfo.includes("Tomorrow") || schedulingInfo.includes(`${schedulingPlugin.library('schedulingLib').getDayOfWeek(startOfTomorrow)}s`)
+      if (!scheduledForTomorrow) options.splice(2, 0, 'Schedule work tomorrow')
+    }
 
     form.addField(new Form.Field.MultipleOptions('nextActions', 'Next actions', options, null, []))
 
-    const schedulingInfo = await schedulingPlugin.library('schedulingLib').getScheduleInfo(task)
-    const schedulingInfoString = schedulingInfo === '' ? '' : `\nNB: Task is scheduled for ${schedulingInfo}.`
+    const schedulingInfoString = (schedulingPlugin !== null && schedulingInfo === '') ? '' : `\nNB: Task is scheduled for ${schedulingInfo}.`
 
     await form.show(`You worked on '${trimmedName}'.\nWhat do you want to do next?${schedulingInfoString}`, 'OK')
 
