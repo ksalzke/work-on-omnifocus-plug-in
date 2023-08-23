@@ -16,11 +16,11 @@
 
     // NB using form as alert not being processed correctly
     const form = new Form()
-    const options = ['Defer until tomorrow', 'Mark as complete', 'Stop working on']
+    const options = ['Defer until tomorrow', 'Defer until a future date', 'Mark as complete', 'Stop working on']
 
     // if scheduling plug-in is also installed, add option to schedule for tomorrow or a future date
     const schedulingPlugin = PlugIn.find('com.KaitlinSalzke.Scheduling')
-    if (schedulingPlugin !== null) options.splice(1, 0, 'Schedule work tomorrow', 'Schedule work for a future date')
+    if (schedulingPlugin !== null) options.splice(2, 0, 'Schedule work tomorrow', 'Schedule work for a future date')
 
     form.addField(new Form.Field.MultipleOptions('nextActions', 'Next actions', options, null, []))
 
@@ -33,6 +33,12 @@
       switch (nextAction) {
         case 'Defer until tomorrow':
           task.deferDate = Calendar.current.startOfDay(tomorrow)
+          break
+        case 'Defer until a future date':
+          const deferForm = new Form()
+          deferForm.addField(new Form.Field.Date('deferDate', 'Defer until', null))
+          await deferForm.show('Set Defer Date', 'OK')
+          task.deferDate = deferForm.values.deferDate
           break
         case 'Schedule work tomorrow':
           await schedulingPlugin.library('schedulingLib').rescheduleTask(task, tomorrow)
