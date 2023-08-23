@@ -40,7 +40,7 @@ This plug-in contains the following functions within the `workOnLib` library.
 
 This adds a new repeating task as a child of the provided task, with the name "Work on: <Task>". If the original task name has characters at the start or end that are 'non-word' characters (i.e. characters other than a-z, A-Z, 0-9, and underscore), these are disregarded in the name.
 
-The 'work on' task is set to repeat hourly.
+The 'work on' task is set to repeat every 60 minutes.
 
 ## `onComplete (task: Task)`
 

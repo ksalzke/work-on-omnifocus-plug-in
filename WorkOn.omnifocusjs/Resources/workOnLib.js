@@ -7,7 +7,7 @@
 
     const newTask = new Task(`Work on: ${trimmedName}`, task.beginning)
     newTask.deferDate = new Date() // assign due date of now so that first repetition hourly deferral works as expected
-    newTask.repetitionRule = new Task.RepetitionRule('FREQ=HOURLY', Task.RepetitionMethod.DeferUntilDate)
+    newTask.repetitionRule = new Task.RepetitionRule('FREQ=MINUTELY;INTERVAL=60', Task.RepetitionMethod.DeferUntilDate)
   }
 
   workOnLib.onComplete = async (task) => {
