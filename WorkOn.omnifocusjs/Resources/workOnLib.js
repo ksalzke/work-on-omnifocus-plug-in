@@ -25,7 +25,10 @@
 
     form.addField(new Form.Field.MultipleOptions('nextActions', 'Next actions', options, null, []))
 
-    await form.show(`You worked on '${trimmedName}'.\nWhat do you want to do next?`, 'OK')
+    const schedulingInfo = await schedulingPlugin.library('schedulingLib').getScheduleInfo(task)
+    const schedulingInfoString = schedulingInfo === '' ? '' : `\nNB: Task is scheduled for ${schedulingInfo}.`
+
+    await form.show(`You worked on '${trimmedName}'.\nWhat do you want to do next?${schedulingInfoString}`, 'OK')
 
     const tomorrow = new Date()
     tomorrow.setDate(tomorrow.getDate() + 1)
