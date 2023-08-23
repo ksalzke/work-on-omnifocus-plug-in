@@ -6,6 +6,7 @@
     const trimmedName = task.name.match(/\S.*\S/g)[0]
 
     const newTask = new Task(`Work on: ${trimmedName}`, task.beginning)
+    newTask.deferDate = new Date() // assign due date of now so that first repetition hourly deferral works as expected
     newTask.repetitionRule = new Task.RepetitionRule('FREQ=HOURLY', Task.RepetitionMethod.DeferUntilDate)
   }
 
