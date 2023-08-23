@@ -1,3 +1,20 @@
+# [1.2.0](https://github.com/ksalzke/work-on-omnifocus-plug-in/compare/v1.1.0...v1.2.0) (2023-08-23)
+
+
+### Bug Fixes
+
+* :bug: add defer date on creation so first deferral behaves as expected ([bb262fa](https://github.com/ksalzke/work-on-omnifocus-plug-in/commit/bb262faa9c2e8fe0b9597aa475501e33b3b38998)), closes [#4](https://github.com/ksalzke/work-on-omnifocus-plug-in/issues/4)
+
+
+### Features
+
+* :lipstick: show scheduling information if task scheduled (closes [#7](https://github.com/ksalzke/work-on-omnifocus-plug-in/issues/7)) ([6fc1789](https://github.com/ksalzke/work-on-omnifocus-plug-in/commit/6fc17894d5309e13d7a0c03d88a2457c77029d97))
+* :sparkles: add 'defer until a future date' option (closes [#8](https://github.com/ksalzke/work-on-omnifocus-plug-in/issues/8)) ([54dc5c1](https://github.com/ksalzke/work-on-omnifocus-plug-in/commit/54dc5c1f4a968effb6e8fc8e8858898ee961d8b8))
+* :sparkles: don't include "schedule for tomorrow" in prompt if already scheduled for tomorrow ([e5a6c0f](https://github.com/ksalzke/work-on-omnifocus-plug-in/commit/e5a6c0fa07c017af826fd48d0c0046156d0e15ba)), closes [#6](https://github.com/ksalzke/work-on-omnifocus-plug-in/issues/6)
+* :sparkles: use custom complete for parent task if installed (closes [#1](https://github.com/ksalzke/work-on-omnifocus-plug-in/issues/1)) ([d253f0c](https://github.com/ksalzke/work-on-omnifocus-plug-in/commit/d253f0cad43766338d51698e61b146c083113669))
+
+
+
 # [1.1.0](https://github.com/ksalzke/work-on-omnifocus-plug-in/compare/v1.0.2...v1.1.0) (2023-01-31)
 
 
