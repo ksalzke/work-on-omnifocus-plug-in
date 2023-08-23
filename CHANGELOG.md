@@ -1,3 +1,12 @@
+## [1.2.1](https://github.com/ksalzke/work-on-omnifocus-plug-in/compare/v1.2.0...v1.2.1) (2023-08-23)
+
+
+### Bug Fixes
+
+* :bug: add 'true' hourly repetitions using 60 min repeat rule ([dbad1f0](https://github.com/ksalzke/work-on-omnifocus-plug-in/commit/dbad1f058083186c6cd5442f09e4e995dcf81b34)), closes [#5](https://github.com/ksalzke/work-on-omnifocus-plug-in/issues/5)
+
+
+
 # [1.2.0](https://github.com/ksalzke/work-on-omnifocus-plug-in/compare/v1.1.0...v1.2.0) (2023-08-23)
 
 
