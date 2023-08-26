@@ -21,7 +21,7 @@
 
     // if scheduling plug-in is also installed, add option to schedule for tomorrow or a future date
     const schedulingPlugin = PlugIn.find('com.KaitlinSalzke.Scheduling')
-    const schedulingInfo = (schedulingPlugin !== null) ? await schedulingPlugin.library('schedulingLib').getScheduleInfo(task) : ''
+    const schedulingInfo = (schedulingPlugin !== null && schedulingPlugin.getScheduleInfo) ? await schedulingPlugin.library('schedulingLib').getScheduleInfo(task) : '' // only get if installed and getScheduleInfo function exists
 
     if (schedulingPlugin !== null) {
       options.splice(2, 0, 'Schedule work for a future date')
