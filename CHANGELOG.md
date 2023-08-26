@@ -1,3 +1,13 @@
+## [1.2.2](https://github.com/ksalzke/work-on-omnifocus-plug-in/compare/v1.2.1...v1.2.2) (2023-08-26)
+
+
+### Bug Fixes
+
+* :bug: fix logic for when scheduling info is displayed in dialogue ([cf5cb39](https://github.com/ksalzke/work-on-omnifocus-plug-in/commit/cf5cb39a1e3d22a2afe14a13e88311d5f862c713))
+* :bug: handle situation where getScheduleInfo function is not available in Scheduling plugin (version < v2.4.0) ([79944fe](https://github.com/ksalzke/work-on-omnifocus-plug-in/commit/79944fe4463c1855cd0589e3fafa1bdbfc9a0c1b))
+
+
+
 ## [1.2.1](https://github.com/ksalzke/work-on-omnifocus-plug-in/compare/v1.2.0...v1.2.1) (2023-08-23)
 
 
