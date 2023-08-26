@@ -36,7 +36,7 @@
 
     form.addField(new Form.Field.MultipleOptions('nextActions', 'Next actions', options, null, []))
 
-    const schedulingInfoString = (schedulingPlugin !== null && schedulingInfo === '') ? '' : `\nNB: Task is scheduled for ${schedulingInfo}.`
+    const schedulingInfoString = (schedulingPlugin !== null && schedulingInfo !== '') ? `\nNB: Task is scheduled for ${schedulingInfo}.` : '' 
 
     await form.show(`You worked on '${trimmedName}'.\nWhat do you want to do next?${schedulingInfoString}`, 'OK')
 
